@@ -30,13 +30,14 @@ export default class CreateUser extends Component {
 
     axios
       .post("http://localhost:6969/users/add", user)
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error("Error creating user:", err));
 
     this.setState({
       username: "",
     });
 
-    // window.location = "/";
+    window.location = "/";
   }
 
   render() {
@@ -52,6 +53,7 @@ export default class CreateUser extends Component {
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}
+              placeholder="Name should be more than 6 letters"
             />
           </div>
           <br></br>

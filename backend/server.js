@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 6969;
 
 app.use(cors());
-express().use(cors());
+// express().use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
